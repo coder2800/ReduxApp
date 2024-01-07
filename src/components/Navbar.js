@@ -1,6 +1,10 @@
 import React from "react";
+import { useSelector, useDispatch } from 'react-redux'
 
 const Navbar = () => {
+
+  const count = useSelector((state)=>state.counter.count);
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -21,7 +25,7 @@ const Navbar = () => {
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
-            <button className="btn btn-primary disabled" >Your Balance: 0</button>
+            <button className="btn btn-primary disabled" >Your Balance: {count}</button>
           </ul>
         </div>
       </nav>
